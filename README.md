@@ -16,8 +16,9 @@ raven-mm23b009/
 ### 1. [Q2.md](./Q2.md)
 
 **Description:**
-- This file provides detailed documentation for the codebase named "Raven."
-- It explains the architecture, purpose, and functionality of the related code components.
+- This file provides detailed documentation for the method `get_cred_config` in `/Raven/raven/client.cpp`
+- The `get_cred_config` method initializes and returns a QUIC credential configuration for secure client communication. It allocates memory for a `QUIC_CREDENTIAL_CONFIG` structure, sets its values, and returns a pointer to the configured structure. This method ensures the client is configured with proper credentials for secure communication using Microsoft QUIC (msquic).
+.
 
 ---
 
