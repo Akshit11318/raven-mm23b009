@@ -1,6 +1,6 @@
-# Project: Raven-mm23b009
+# Project: Raven-MM23B009
 
-Welcome to the **Raven-mm23b009** repository! This project contains various components related to C++ programming challenges and concepts. Below is an overview of the files and their contents to help you navigate the repository.
+Welcome to the **Raven-mm23b009** repository! This project contains various components related to Application for `Raven Project` Member . Below is an overview of the files and their contents to help you navigate the repository.
 
 ## File Structure
 
@@ -78,4 +78,4 @@ For a detailed explanation, refer to [Q3.md](./Q3.md).
 - [Q3.md](./Q3.md)
 - [Q4.md](./Q4.md)
 
-We hope you find this repository helpful and insightful!
+I hope you find this repository helpful and insightful!
