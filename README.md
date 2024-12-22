@@ -1,137 +1,81 @@
-# Market Data Publishing System
+# Project: Raven-mm23b009
 
-A robust C++ implementation of a publisher-subscriber system for financial market data, supporting equity and bond instruments with different subscription models.
+Welcome to the **Raven-mm23b009** repository! This project contains various components related to C++ programming challenges and concepts. Below is an overview of the files and their contents to help you navigate the repository.
 
-## Q3 - Overview
-
-This system implements an extensible market data distribution platform that handles real-time equity and bond market data updates while supporting both paid and free subscription models. The architecture follows SOLID principles and is designed for high scalability and maintainability.
-
-## Features
-
-- **Dual Publisher System**
-  - Equity Publisher (instrumentId: 0-999)
-  - Bond Publisher (instrumentId: 1000-1999)
-
-- **Flexible Subscription Models**
-  - Paid Subscribers (unlimited data requests)
-  - Free Subscribers (limited to 100 successful requests)
-
-- **Data Management**
-  - Real-time market data updates
-  - Instrument-specific data storage
-  - Subscription validation
-  - Access control based on subscription type
-
-- **Extensible Architecture**
-  - Abstract base classes for publishers and subscribers
-  - Easy integration of new publisher/subscriber types
-  - Modular component design
-
-## Project Structure
+## File Structure
 
 ```
 raven-mm23b009/
 ├── Q2.md
 ├── Q3-mm23b009.cpp
+├── Q3.md
 ├── Q4.md
-├── README.md                        
+├── README.md
 ```
 
+### 1. [Q2.md](./Q2.md)
 
-## Implementation Approach
+**Description:**
+- This file provides detailed documentation for the codebase named "Raven."
+- It explains the architecture, purpose, and functionality of the related code components.
 
-### 1. Core Components
+---
 
-- **InstrumentData**: Container struct holding market data
-- **Publisher**: Abstract base class defining the publisher interface
-- **Subscriber**: Abstract base class defining the subscriber interface
+### 2. [Q3-mm23b009.cpp](./Q3-mm23b009.cpp)
 
-### 2. Design Patterns
+**Description:**
+- A C++ implementation of a robust **Market Data Publishing System.**
+- Supports equity and bond instruments with flexible subscription models.
 
-- **Publisher-Subscriber Pattern**: For decoupled data distribution
-- **Strategy Pattern**: For different subscriber types
-- **Factory Method**: For subscriber creation (extensible)
+#### Key Highlights:
+- **Dual Publisher System:** Handles both equity (IDs: 0-999) and bond (IDs: 1000-1999) instruments.
+- **Subscription Models:**
+  - Paid Subscribers: Unlimited data requests.
+  - Free Subscribers: Limited to 100 successful requests.
+- **Data Management:** Real-time updates, subscription validation, and access control.
+- **Extensibility:**
+  - Abstract base classes for publishers and subscribers.
+  - Designed for easy integration of new types.
 
-### 3. Data Structures
+For a detailed explanation, refer to [Q3.md](./Q3.md).
 
-- `unordered_map` for O(1) access to instrument data
-- `unordered_set` for efficient subscriber management
-- Smart pointers for memory management
+---
 
-## Usage
+### 3. [Q3.md](./Q3.md)
 
-### Building the Project
+**Description:**
+- Provides an in-depth overview of the **Market Data Publishing System.**
+- Explains the features, architecture, and principles applied to the implementation.
 
-```bash
-g++ -Wall -Wextra -g3 ./raven-mm23b009.cpp -o ./publish 
-```
+#### Topics Covered:
+- Dual Publisher System
+- Subscription Models
+- Data Management
+- Extensible Architecture
 
-### Running the System
+---
 
-```bash
-./publish
-```
+### 4. [Q4.md](./Q4.md)
 
-### Input Format
+**Description:**
+- Discusses the use of `std::unique_ptr` in C++.
+- Explains its role in memory management, ensuring resource safety through RAII (Resource Acquisition Is Initialization).
+- Highlights best practices and examples of using `std::unique_ptr` in modern C++.
 
-```
-<number_of_lines>
-P <instrumentId> <lastTradedPrice> <bondYield/lastDayVolume>
-S <subscriber_type> <subscriberId> subscribe <instrumentId>
-S <subscriber_type> <subscriberId> get_data <instrumentId>
-```
+---
 
-### Output Format
+### 5. [README.md](./README.md)
 
-For successful requests:
-```
-<subscriber_type>,<subscriberId>,<instrumentId>,<lastTradedPrice>,<bondYield/lastDayVolume>
-```
+**Description:**
+- The current file provides an overview of the project, highlighting the purpose and contents of each file in the repository.
+- Contains links to all major components for easy access.
 
-For invalid requests:
-```
-<subscriber_type>,<subscriberId>,<instrumentId>,invalid_request
-```
+---
 
-## Constraints and Limitations
+### Navigation
+- [Q2.md](./Q2.md)
+- [Q3-mm23b009.cpp](./Q3-mm23b009.cpp)
+- [Q3.md](./Q3.md)
+- [Q4.md](./Q4.md)
 
-1. **Instrument ID Ranges**
-   - Equity: 0-999
-   - Bonds: 1000-1999
-
-2. **Subscription Limitations**
-   - Free subscribers: 100 successful requests maximum
-   - Paid subscribers: Unlimited requests
-
-3. **Data Validation**
-   - Invalid instrument IDs are rejected
-   - Unsubscribed requests are rejected
-   - Type mismatches are rejected
-
-4. **Memory Constraints**
-   - Scales with number of instruments and subscribers
-   - Uses efficient data structures for large datasets
-
-## Examples
-
-### Basic Usage
-
-```bash
-7
-S F 101 subscribe 200
-P 200 1501449788 1682366923
-S F 101 get_data 200
-P 500 747403339 1960608025
-S P 101 subscribe 500
-S P 102 subscribe 200
-S P 102 get_data 200
-```
-
-### Output
-
-```bash
-F,101,200,1501449788.000000,1682366923.000000
-P,102,200,1501449788.000000,1682366923.000000
-```
-
-
+We hope you find this repository helpful and insightful!
